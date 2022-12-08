@@ -16,8 +16,9 @@ app.get("/favicon.ico", function (req, res) {
 });
 
 // mongoose.connect("mongodb://localhost:27017/todolistDB");
-mongoose.connect(process.env.ATLAS_URL);
-// mongoose.connect("mongodb+srv://admin-sadko:sadko@cluster0.0arxhtr.mongodb.net/todolistDB");
+mongoose.connect(process.env.ATLAS_URL, {useNewUrlParser: true, useUnifiedTopology:true});
+
+
 const itemsSchema = {
   name: {
     type: String,
